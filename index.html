@@ -1,1 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafetín Central UCV</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Cafetín Central UCV</h1>
+      <p>Prototipo funcional — Introducción a la Informática (6301)</p>
+    </header>
 
+    <main class="container">
+      <section id="login-view" class="card">
+        <h2>Ingreso al sistema</h2>
+        <p>Use una cuenta simulada para acceder a cada módulo.</p>
+        <form id="login-form" class="stack">
+          <label>
+            Usuario
+            <input type="text" id="username" required />
+          </label>
+          <label>
+            Contraseña
+            <input type="password" id="password" required />
+          </label>
+          <button type="submit">Iniciar sesión</button>
+        </form>
+
+        <div class="credentials">
+          <h3>Cuentas simuladas</h3>
+          <ul>
+            <li><strong>Cliente:</strong> ClienteUCV / Central_123</li>
+            <li><strong>Caja:</strong> caja_01 / Cajero#123</li>
+            <li><strong>Administración:</strong> adminRoot / cafetinAdmin</li>
+          </ul>
+        </div>
+        <p id="login-message" class="message"></p>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <div class="toolbar">
+          <p id="welcome"></p>
+          <button id="logout-btn" class="danger">Cerrar sesión</button>
+        </div>
+
+        <section id="client-view" class="card hidden">
+          <h2>Módulo de Clientela</h2>
+          <p class="loyalty" id="loyalty-points">Tienes 150 puntos</p>
+
+          <div class="grid two-columns">
+            <article>
+              <h3>Catálogo interactivo</h3>
+              <div id="catalog" class="products"></div>
+            </article>
+
+            <article>
+              <h3>Carrito de compras (<span id="cart-count">0</span>)</h3>
+              <ul id="cart-items" class="list"></ul>
+              <p>Subtotal: <strong>$<span id="cart-subtotal">0.00</span></strong></p>
+              <button id="checkout-btn">Confirmar pedido (simulado)</button>
+              <p id="checkout-message" class="message"></p>
+            </article>
+          </div>
+
+          <article>
+            <h3>Historial de compras</h3>
+            <ul id="purchase-history" class="list"></ul>
+          </article>
+        </section>
+
+        <section id="cashier-view" class="card hidden">
+          <h2>Módulo de Personal de Caja (Punto de Venta)</h2>
+          <p>Seleccione productos para simular el registro de una venta.</p>
+
+          <div id="cashier-products" class="products"></div>
+          <h3>Pedido en captura</h3>
+          <ul id="cashier-order" class="list"></ul>
+          <p>Total de venta: <strong>$<span id="cashier-total">0.00</span></strong></p>
+          <button id="emit-receipt-btn">Emitir recibo</button>
+          <p id="receipt-message" class="message"></p>
+        </section>
+
+        <section id="admin-view" class="card hidden">
+          <h2>Módulo de Personal de Administración</h2>
+
+          <div class="grid two-columns">
+            <article>
+              <h3>Agregar al menú</h3>
+              <form id="add-product-form" class="stack">
+                <label>
+                  Nombre
+                  <input type="text" id="new-product-name" required />
+                </label>
+                <label>
+                  Precio
+                  <input type="number" id="new-product-price" min="0" step="0.01" required />
+                </label>
+                <label>
+                  URL de la foto (carpeta imagenes)
+                  <input
+                    type="text"
+                    id="new-product-image"
+                    placeholder="imagenes/ejemplo.jpg"
+                    required
+                  />
+                </label>
+                <button type="submit">Agregar producto</button>
+              </form>
+              <p id="admin-message" class="message"></p>
+            </article>
+
+            <article>
+              <h3>Eliminar del menú</h3>
+              <ul id="admin-products" class="list"></ul>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
