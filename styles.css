@@ -116,6 +116,28 @@ button.danger {
   gap: 0.5rem;
 }
 
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.product-thumb {
+  width: 64px;
+  min-width: 64px;
+  max-width: 64px;
+  height: 64px;
+  min-height: 64px;
+  max-height: 64px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #eef1f8;
+  flex-shrink: 0;
+}
+
 .product-item small {
   color: var(--muted);
 }
