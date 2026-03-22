@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="app-header">
+    <header class="title">
       <h1>Cafetín Central UCV</h1>
-      <p>Prototipo funcional — Introducción a la Informática (6301)</p>
     </header>
 
     <main class="container">
       <section id="login-view" class="card">
         <h2>Ingreso al sistema</h2>
-        <p>Use una cuenta simulada para acceder a cada módulo.</p>
+        <p>Use alguna de las cuentas.</p>
         <form id="login-form" class="stack">
           <label>
             Usuario
@@ -29,7 +28,7 @@
         </form>
 
         <div class="credentials">
-          <h3>Cuentas simuladas</h3>
+          <h3>Cuentas</h3>
           <ul>
             <li><strong>Cliente:</strong> ClienteUCV / Central_123</li>
             <li><strong>Caja:</strong> caja_01 / Cajero#123</li>
@@ -51,7 +50,7 @@
 
           <div class="grid two-columns">
             <article>
-              <h3>Catálogo interactivo</h3>
+              <h3>Catálogo de productos</h3>
               <div id="catalog" class="products"></div>
             </article>
 
@@ -59,7 +58,7 @@
               <h3>Carrito de compras (<span id="cart-count">0</span>)</h3>
               <ul id="cart-items" class="list"></ul>
               <p>Subtotal: <strong>$<span id="cart-subtotal">0.00</span></strong></p>
-              <button id="checkout-btn">Confirmar pedido (simulado)</button>
+              <button id="checkout-btn">Confirmar pedido</button>
               <p id="checkout-message" class="message"></p>
             </article>
           </div>
@@ -71,8 +70,8 @@
         </section>
 
         <section id="cashier-view" class="card hidden">
-          <h2>Módulo de Personal de Caja (Punto de Venta)</h2>
-          <p>Seleccione productos para simular el registro de una venta.</p>
+          <h2>Personal de Caja</h2>
+          <p>Seleccione productos para el registro de una venta.</p>
 
           <div id="cashier-products" class="products"></div>
           <h3>Pedido en captura</h3>
@@ -83,7 +82,7 @@
         </section>
 
         <section id="admin-view" class="card hidden">
-          <h2>Módulo de Personal de Administración</h2>
+          <h2>Personal de Administración</h2>
 
           <div class="grid two-columns">
             <article>
@@ -98,7 +97,7 @@
                   <input type="number" id="new-product-price" min="0" step="0.01" required />
                 </label>
                 <label>
-                  URL de la foto (carpeta imagenes)
+                  URL de la foto
                   <input
                     type="text"
                     id="new-product-image"
@@ -122,4 +121,4 @@
 
     <script src="script.js"></script>
   </body>
-  </html>
+</html>
